@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0;" name="viewport"/>
     <title>在线视频播放</title>
     <style>
       * {
@@ -22,9 +23,26 @@
         width: 100%;
         height: 100%;
       }
+      .btns {
+        position: fixed;
+        top: 0;
+      }
     </style>
   </head>
   <body>
-    <video id="videoPlayer" class="video-player" name="media" autobuffer controls="" autoplay="" src="http://jsmov2.a.yximgs.com/upic/2019/08/13/23/BMjAxOTA4MTMyMzAxNDRfMTE3MTIxODE1MV8xNjM2MjM3OTA0M18xXzM=_b_Bd86820b9d7dffbc03fca48fa5ef9271e.mp4?tag=1-1568191543-h-0-ilfsrpyl2w-a81269359092ad8d&type=hot"></video>
+    <video id="videoPlayer" class="video-player" name="media" autobuffer controls="" autoplay="" src="videos/cj.mp4"></video>
+    <div class="btns">
+      <button type="button" id="playBtn">播放</button>
+      <button type="button" id="pauseBtn">暂停</button>
+    </div>
+    <script>
+      console.log(document.body.querySelector("#videoPlayer"))
+      document.body.querySelector("#playBtn").addEventListener('click', function (event) {
+        document.body.querySelector("#videoPlayer").play()
+      })
+      document.body.querySelector("#pauseBtn").addEventListener('click', function (event) {
+        document.body.querySelector("#videoPlayer").pause()
+      })
+    </script>
   </body>
 </html>
